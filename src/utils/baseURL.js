@@ -1,4 +1,4 @@
-export const baseURL = "https://saas-backend-eight.vercel.app/";
+export const baseURL = "https://saas-backend-eight.vercel.app";
 
 export const config = {
   headers: {
