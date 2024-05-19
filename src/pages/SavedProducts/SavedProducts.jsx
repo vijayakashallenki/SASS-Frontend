@@ -66,8 +66,11 @@ const SavedProducts = () => {
   };
 
   const prePage = () => {
-    if (currentPage !== firstIndex) {
+    if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
+    }
+    else{
+      setCurrentPage(1);
     }
   };
 
@@ -76,8 +79,11 @@ const SavedProducts = () => {
   };
 
   const nextPage = () => {
-    if (currentPage !== lastIndex) {
+    if (currentPage !== npage) {
       setCurrentPage(currentPage + 1);
+    }
+    else{
+      setCurrentPage(npage);
     }
   };
 
