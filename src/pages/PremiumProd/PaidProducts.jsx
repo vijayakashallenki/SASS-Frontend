@@ -20,7 +20,7 @@ const PaidProducts = () => {
   const { user, userDetails } = useSelector((state) => state?.users);
 
   const gotUser = userDetails;
-  console.log(gotUser);
+  // console.log(gotUser);
 
   const savedProducts = gotUser?.saved?.map((product) => {
     return product._id;
@@ -70,8 +70,10 @@ const PaidProducts = () => {
   };
 
   const prePage = () => {
-    if (currentPage !== firstIndex) {
+    if (currentPage !== 1) {
       setCurrentPage(currentPage - 1);
+    } else {
+      setCurrentPage(1);
     }
   };
 
@@ -80,8 +82,10 @@ const PaidProducts = () => {
   };
 
   const nextPage = () => {
-    if (currentPage !== lastIndex) {
+    if (currentPage !== npage) {
       setCurrentPage(currentPage + 1);
+    } else {
+      setCurrentPage(npage);
     }
   };
 
@@ -355,7 +359,7 @@ const PaidProducts = () => {
               return (
                 <>
                   {category === "All" || singleProd.category === category ? (
-                    <div class="w-full px-4 md:w-1/2 lg:w-1/3 flex justify-center">
+                    <div class="key={singleProd._id} w-full px-4 md:w-1/2 lg:w-1/3 flex justify-center">
                       <div class="mx-auto mb-10 w-full bg-white rounded-xl p-2 max-w-[370px] h-[700px]">
                         <div className="flex flex-col justify-between h-full">
                           <div class="mb-4 overflow-hidden rounded-lg h-[300px] bg-gray-100 flex items-center justify-center">
