@@ -10,7 +10,7 @@ import {
 } from "../../redux/slices/users/usersSlices.js";
 import Cookies from "js-cookie";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { BsPersonCheck } from "react-icons/bs";
+import { BsPersonCheck, BsX } from "react-icons/bs";
 
 const Navbar = () => {
   const [Open, setOpen] = useState(false);
@@ -264,10 +264,16 @@ const Navbar = () => {
               className={`md:hidden flex cursor-pointer text-black`}
             />
             <div
-              className={`w-full h-[39rem] border-y bg-gray-800 absolute left-0 top-14 z-10 ${
+              className={`w-full h-[100vh] border-y bg-[#a2826d] fixed top-0 left-0 text-black z-100 ${
                 openMenuMobile ? null : "hidden"
               }`}
             >
+              <div className="flex justify-end mr-4 mt-4 font-bold">
+                <BsX
+                  onClick={() => setOpenMenuMobile(false)}
+                  className="text-white cursor-pointer size-10"
+                />
+              </div>
               <ul>
                 <li
                   className="text-xl text-blue-100 mb-2 mt-4 ml-6"
